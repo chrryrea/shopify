@@ -1,10 +1,51 @@
 {
   "sections": {
-    "main": {
-      "type": "main-404"
+    "404-banner": {
+      "type": "image-banner",
+      "settings": {
+        "image_height": "medium",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "heading": "Page Not Found",
+        "heading_size": "h1",
+        "text": "<p>Oops! The page you're looking for seems to have taken a different career path.</p>",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "overlay_opacity": 30
+      }
+    },
+    "404-content": {
+      "type": "text",
+      "settings": {
+        "text": "<div style=\"max-width: 800px; margin: 0 auto; text-align: center; padding: 2rem 1rem;\"><h2 style=\"font-size: 2rem; margin-bottom: 1.5rem;\">Let's Get You Back on Track</h2><p style=\"font-size: 1.125rem; margin-bottom: 2rem; color: #4B5563;\">While you're here, check out these popular resources to advance your career journey:</p><div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;\"><a href='/collections/all' class='button button--primary' style='display: block; background: #4F46E5; color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500;'>Explore Our Services</a><a href='/blog' class='button' style='display: block; background: #E5E7EB; color: #111827; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500;'>Read Our Blog</a><a href='/pages/contact' class='button' style='display: block; border: 1px solid #D1D5DB; color: #111827; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 500;'>Contact Support</a></div></div>",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured-resources": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "resources",
+        "title": "Popular Resources",
+        "heading_size": "h2",
+        "post_limit": 3,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": true,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-2",
+        "padding_top": 48,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
-    "main"
+    "404-banner",
+    "404-content",
+    "featured-resources"
   ]
 }

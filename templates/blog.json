@@ -1,19 +1,87 @@
 {
   "sections": {
-    "main": {
+    "blog-header": {
+      "type": "image-banner",
+      "settings": {
+        "image_height": "small",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "heading": "Career Insights & Resources",
+        "heading_size": "h1",
+        "text": "<p>Expert advice, career strategies, and success stories to help you navigate your professional journey.</p>",
+        "padding_top": 64,
+        "padding_bottom": 48,
+        "overlay_opacity": 30
+      }
+    },
+    "featured-posts": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "news",
+        "show_view_all": true,
+        "title": "Featured Articles",
+        "heading_size": "h2",
+        "post_limit": 3,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": true,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "padding_top": 48,
+        "padding_bottom": 24
+      }
+    },
+    "blog-categories": {
+      "type": "text",
+      "settings": {
+        "text": "<div class=\"blog-categories\" style=\"max-width: 1200px; margin: 0 auto; text-align: center; padding: 1.5rem 0; border-bottom: 1px solid #e5e7eb;\"><a href='#all' class='category-link active' style='margin: 0 1rem; color: #4f46e5; text-decoration: none; font-weight: 500;'>All Topics</a><a href='#career-advice' class='category-link' style='margin: 0 1rem; color: #6b7280; text-decoration: none;'>Career Advice</a><a href='#job-search' class='category-link' style='margin: 0 1rem; color: #6b7280; text-decoration: none;'>Job Search</a><a href='#interview-tips' class='category-link' style='margin: 0 1rem; color: #6b7280; text-decoration: none;'>Interview Tips</a><a href='#success-stories' class='category-link' style='margin: 0 1rem; color: #6b7280; text-decoration: none;'>Success Stories</a></div>",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "main-blog": {
       "type": "main-blog",
       "settings": {
-        "layout": "collage",
+        "layout": "grid",
         "show_image": true,
         "image_height": "medium",
         "show_date": true,
-        "show_author": false,
+        "show_author": true,
+        "show_excerpt": true,
+        "show_tags": true,
+        "show_comments": false,
+        "blog_show_tags": true,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": true,
+        "blog_show_image": true,
+        "blog_image_ratio": "square",
+        "color_scheme": "scheme-1",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 64
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Get Career Tips & Updates",
+        "subtext": "<p>Subscribe to receive our latest career advice, job search strategies, and success stories directly to your inbox.</p>",
+        "button_label": "Subscribe",
+        "color_scheme": "scheme-2",
+        "padding_top": 48,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
-    "main"
+    "blog-header",
+    "featured-posts",
+    "blog-categories",
+    "main-blog",
+    "newsletter"
   ]
 }

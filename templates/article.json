@@ -1,40 +1,119 @@
 {
   "sections": {
-    "main": {
+    "article-header": {
+      "type": "image-banner",
+      "settings": {
+        "image_height": "medium",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "bottom-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "heading_size": "h1",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "overlay_opacity": 20
+      }
+    },
+    "main-article": {
       "type": "main-article",
       "blocks": {
+        "breadcrumb": {
+          "type": "breadcrumb",
+          "settings": {
+            "show_divider": true
+          }
+        },
         "featured_image": {
           "type": "featured_image",
           "settings": {
-            "image_height": "adapt"
+            "image_height": "large",
+            "show_caption": true
           }
         },
         "title": {
           "type": "title",
           "settings": {
             "blog_show_date": true,
-            "blog_show_author": false
+            "blog_show_author": true,
+            "blog_show_reading_time": true
           }
+        },
+        "tags": {
+          "type": "tags"
         },
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Share This Article"
           }
         },
         "content": {
           "type": "content"
+        },
+        "author_bio": {
+          "type": "author_bio",
+          "settings": {
+            "show_author_image": true,
+            "show_author_name": true,
+            "show_author_bio": true
+          }
+        },
+        "related_posts": {
+          "type": "related_posts",
+          "settings": {
+            "heading": "Continue Reading",
+            "post_limit": 3,
+            "show_image": true,
+            "show_date": true,
+            "show_author": false,
+            "show_excerpt": true
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "heading": "Get More Career Insights",
+            "subtext": "<p>Subscribe to receive our latest career advice, job search strategies, and success stories directly to your inbox.</p>",
+            "button_label": "Subscribe Now",
+            "color_scheme": "scheme-2"
+          }
         }
       },
       "block_order": [
+        "breadcrumb",
         "featured_image",
         "title",
+        "tags",
         "share",
-        "content"
-      ]
+        "content",
+        "author_bio",
+        "related_posts",
+        "newsletter"
+      ],
+      "settings": {
+        "padding_top": 24,
+        "padding_bottom": 48,
+        "color_scheme": "scheme-1",
+        "content_width": "narrow"
+      }
+    },
+    "cta-banner": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready to Transform Your Career?",
+        "text": "Book a free consultation call to discuss your career goals and how we can help you achieve them.",
+        "button_label": "Schedule a Call",
+        "button_link": "/pages/consultation",
+        "color_scheme": "accent-1",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
-    "main"
+    "article-header",
+    "main-article",
+    "cta-banner"
   ]
 }
