@@ -1,32 +1,37 @@
 {
   "sections": {
-    "career-hero": {
-      "type": "everyday-ai-hero",
+    "hero": {
+      "type": "image-banner",
       "settings": {
-        "badge": "FOR MID-CAREER PROFESSIONALS",
-        "title": "Feeling Stuck After 10+ Years?",
-        "subtitle": "You're Ready for the Next Chapter",
-        "description": "Navigate your career transition with confidence through gentle guidance, practical tools, and a supportive peer community—no hustle culture required",
-        "show_cta": true,
-        "cta_text": "Take Free Career Assessment",
-        "cta_link": "/pages/assessment",
-        "secondary_cta_text": "Explore Programs",
-        "secondary_cta_link": "#programs",
-        "trust_line": "Join 1000+ mid-career professionals who've successfully transitioned • 60-day guarantee"
+        "image_height": "large",
+        "adapt_height_first_image": true,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "heading": "Feeling Stuck After 10+ Years?",
+        "heading_size": "h1",
+        "text": "<p>Navigate your career transition with confidence through gentle guidance, practical tools, and a supportive peer community—no hustle culture required</p>",
+        "button_label_1": "Take Free Career Assessment",
+        "button_link_1": "/pages/assessment",
+        "button_label_2": "Explore Programs",
+        "button_link_2": "#programs",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "overlay_opacity": 30
       }
     },
-    "career-benefits": {
-      "type": "career-benefits",
+    "features": {
+      "type": "multirow",
       "settings": {
         "title": "What You'll Gain on Your Journey",
-        "subtitle": "Navigate your mid-career transition with confidence through our nurturing, whole-life approach",
-        "show_cta": true,
-        "cta_text": "Start Your Free Assessment",
-        "cta_link": "/pages/assessment"
+        "subheading": "Navigate your mid-career transition with confidence through our nurturing, whole-life approach",
+        "button_label": "Start Your Free Assessment",
+        "button_link": "/pages/assessment"
       },
       "blocks": {
-        "benefit_1": {
-          "type": "benefit",
+        "feature_1": {
+          "type": "row",
           "settings": {
             "icon_emoji": "🌱",
             "title": "Sustainable Growth Strategies",
@@ -151,164 +156,40 @@
             "quote": "What I loved most was the whole-life consideration. They didn't just focus on my career—they helped me design a transition that worked for my family too. I made the move without sacrificing what matters most.",
             "name": "Priya S.",
             "title": "HR Manager → Learning & Development Lead",
-            "result": "Transitioned while managing family commitments"
           }
         }
-      },
-      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"]
+      }
     },
-    "about-guide": {
-      "type": "about-keith",
+    "featured-collection": {
+      "type": "featured-collection",
       "settings": {
-        "title": "Gentle Guidance for Your Career Journey",
-        "description": "<p>I'm here to support you in your unique career journey, offering gentle guidance and care. Unlike aggressive career coaches, I focus on nurturing transitions that respect your need for work-life balance. My approach is built on understanding your individual path and providing the support you need to grow without burning out.</p>"
-      },
-      "blocks": {
-        "credential_1": {
-          "type": "credential",
-          "settings": {
-            "icon": "fas fa-hands-helping",
-            "title": "Nurturing Career Guide",
-            "description": "Supporting Your Unique Journey with Care"
-          }
-        },
-        "credential_2": {
-          "type": "credential",
-          "settings": {
-            "icon": "fas fa-balance-scale",
-            "title": "Whole-Life Approach",
-            "description": "Balancing Career Growth with Personal Well-being"
-          }
-        },
-        "credential_3": {
-          "type": "credential",
-          "settings": {
-            "icon": "fas fa-users",
-            "title": "Supportive Community",
-            "description": "Join 1000+ Like-Minded Professionals"
-          }
-        }
-      },
-      "block_order": ["credential_1", "credential_2", "credential_3"]
-    },
-    "programs": {
-      "type": "program-offerings",
-      "settings": {
-        "title": "Choose Your Path Forward",
-        "subtitle": "Whether you're just starting to explore or ready to commit, we have a supportive path designed for you",
-        "guarantee_text": "60-Day Money-Back Guarantee • Join 1000+ Mid-Career Professionals"
-      },
-      "blocks": {
-        "program_1": {
-          "type": "program",
-          "settings": {
-            "badge": "START HERE",
-            "title": "Career Assessment",
-            "price": "Free",
-            "price_detail": "one-time",
-            "description": "Begin your journey with clarity about where you are and where you want to go",
-            "features": "15-minute career assessment|Personalized insights report|Weekly career guidance tips|Access to our private community",
-            "cta_text": "Start Free Assessment",
-            "cta_link": "/pages/assessment",
-            "is_featured": false
-          }
-        },
-        "program_2": {
-          "type": "program",
-          "settings": {
-            "badge": "SELF-PACED",
-            "title": "Mid-Career Pivot Playbook",
-            "price": "197",
-            "price_detail": "one-time investment",
-            "description": "Your comprehensive roadmap for navigating a successful career transition at your own pace",
-            "features": "8 core modules with video lessons|Downloadable worksheets & templates|LinkedIn optimization guide|Private Slack community access|Lifetime access & updates",
-            "cta_text": "Get the Playbook",
-            "cta_link": "/products/pivot-playbook",
-            "is_featured": false
-          }
-        },
-        "program_3": {
-          "type": "program",
-          "settings": {
-            "badge": "FLAGSHIP PROGRAM",
-            "title": "90-Day Career Compass",
-            "price": "497",
-            "price_detail": "payment plans available",
-            "description": "Guided group program with personalized support for your complete career transition",
-            "features": "12 weeks of live group coaching|Personal career transition plan|Peer accountability partnerships|Resume & LinkedIn optimization|Interview preparation support|6 months alumni community access",
-            "cta_text": "Join Next Cohort",
-            "cta_link": "/products/career-compass",
-            "is_featured": true
-          }
-        },
-        "program_4": {
-          "type": "program",
-          "settings": {
-            "badge": "ONGOING SUPPORT",
-            "title": "Monthly Mastermind",
-            "price": "97",
-            "price_detail": "per month, cancel anytime",
-            "description": "Continuous peer support and accountability for professionals in transition",
-            "features": "2 live group sessions monthly|Peer support community|Guest expert sessions|Monthly action planning|Career resource library",
-            "cta_text": "Join the Community",
-            "cta_link": "/products/mastermind",
-            "is_featured": false
-          }
-        }
-      },
-      "block_order": ["program_1", "program_2", "program_3", "program_4"]
+        "title": "Our Coaching Programs",
+        "description": "Whether you're just starting to explore or ready to commit, we have a supportive path designed for you",
+        "collection": "all",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     },
     "faq": {
-      "type": "career-faq",
+      "type": "rich-text",
       "settings": {
-        "title": "Questions You Might Have",
-        "subtitle": "We understand the concerns and uncertainties that come with career transitions. Here are answers to common questions.",
-        "show_contact_cta": true,
-        "contact_title": "Still Have Questions?",
-        "contact_text": "We're here to support you. Schedule a free 15-minute consultation to discuss your unique situation.",
-        "contact_button": "Book Free Consultation",
-        "contact_link": "/pages/consultation"
-      },
-      "blocks": {
-        "faq_1": {
-          "type": "faq_item",
-          "settings": {
-            "question": "I'm worried about starting over. Will I have to take a pay cut?",
-            "answer": "<p>We focus on lateral or upward moves that leverage your experience. While some transitions involve short-term adjustments, our average member sees a 20%+ salary increase post-transition. We'll help you identify roles where your skills are valued and compensated appropriately.</p>"
-          }
-        },
-        "faq_2": {
-          "type": "faq_item",
-          "settings": {
-            "question": "How is this different from other career coaching programs?",
-            "answer": "<p>Unlike programs that push aggressive advancement or entrepreneurship, we focus on sustainable transitions with work-life integration. Our approach is nurturing, not hustle-focused. We provide peer community support, step-by-step guidance, and consider your whole life—not just your career goals.</p>"
-          }
-        },
-        "faq_3": {
-          "type": "faq_item",
-          "settings": {
-            "question": "I have family responsibilities. Can I really make this work?",
-            "answer": "<p>Absolutely. Our whole-life approach is designed for professionals balancing multiple commitments. We help you create a transition timeline that respects your family needs. Many of our members successfully pivoted while managing parenting, caregiving, and other responsibilities.</p>"
-          }
-        },
-        "faq_4": {
-          "type": "faq_item",
-          "settings": {
-            "question": "What if I don't know what I want to do next?",
-            "answer": "<p>That's exactly where our free Career Assessment comes in. We'll help you gain clarity on your strengths, values, and options. The assessment process itself often reveals possibilities you hadn't considered. You don't need all the answers to get started.</p>"
-          }
-        }
-      },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"]
+        "heading": "Frequently Asked Questions",
+        "subtext": "We understand the concerns and uncertainties that come with career transitions. Here are answers to some common questions.",
+        "color_scheme": "scheme-2",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "desktop_content_position": "center",
+        "content_alignment": "center"
+      }
     }
   },
   "order": [
-    "career-hero",
-    "career-benefits",
-    "community-unity",
-    "success-stories",
-    "about-guide",
-    "programs",
+    "hero",
+    "features",
+    "testimonials",
     "faq"
   ]
 }

@@ -1,65 +1,28 @@
 {
   "sections": {
-    "contact-banner": {
-      "type": "image-banner",
+    "main": {
+      "type": "page",
       "settings": {
-        "image_height": "medium",
-        "adapt_height_first_image": true,
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
         "color_scheme": "scheme-1",
-        "heading": "Let's Start Your Career Journey",
-        "heading_size": "h1",
-        "text": "<p>Have questions about our coaching services? We're here to help.</p>",
-        "padding_top": 64,
-        "padding_bottom": 64,
-        "overlay_opacity": 30
-      }
-    },
-    "contact-info": {
-      "type": "contact-info",
-      "settings": {
-        "heading": "Get In Touch",
-        "subtext": "<p>Fill out the form below or reach out directly. We typically respond within 24-48 hours.</p>",
-        "show_email": true,
-        "email": "support@yourcareercoach.com",
-        "show_phone": true,
-        "phone": "+1 (555) 123-4567",
-        "show_hours": true,
-        "hours": "<p>Monday - Friday: 9am - 5pm EST<br>Weekends: Closed</p>",
-        "color_scheme": "scheme-2",
-        "padding_top": 48,
-        "padding_bottom": 48
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "contact-form": {
       "type": "contact-form",
       "settings": {
         "heading": "Send Us a Message",
-        "subtext": "<p>Whether you're ready to start coaching or just have questions, we'd love to hear from you.</p>",
-        "heading_size": "h2",
-        "color_scheme": "scheme-1",
-        "form_layout": "stacked",
+        "text": "<p>Have questions about our coaching services? We're here to help.</p>",
+        "email": "support@yourdomain.com",
+        "phone": "+1 (XXX) XXX-XXXX",
+        "color_scheme": "scheme-2",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "faq": {
-      "type": "faq",
-      "settings": {
-        "heading": "Frequently Asked Questions",
-        "subtext": "<p>Find quick answers to common questions about our coaching services.</p>",
-        "color_scheme": "scheme-2",
-        "padding_top": 64,
-        "padding_bottom": 64
       }
     }
   },
   "order": [
-    "contact-banner",
-    "contact-info",
-    "contact-form",
-    "faq"
+    "main",
+    "contact-form"
   ]
 }

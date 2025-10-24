@@ -69,15 +69,6 @@
             "show_author": false,
             "show_excerpt": true
           }
-        },
-        "newsletter": {
-          "type": "newsletter",
-          "settings": {
-            "heading": "Get More Career Insights",
-            "subtext": "<p>Subscribe to receive our latest career advice, job search strategies, and success stories directly to your inbox.</p>",
-            "button_label": "Subscribe Now",
-            "color_scheme": "scheme-2"
-          }
         }
       },
       "block_order": [
@@ -88,8 +79,7 @@
         "share",
         "content",
         "author_bio",
-        "related_posts",
-        "newsletter"
+        "related_posts"
       ],
       "settings": {
         "padding_top": 24,
@@ -98,22 +88,9 @@
         "content_width": "narrow"
       }
     },
-    "cta-banner": {
-      "type": "cta-banner",
-      "settings": {
-        "heading": "Ready to Transform Your Career?",
-        "text": "Book a free consultation call to discuss your career goals and how we can help you achieve them.",
-        "button_label": "Schedule a Call",
-        "button_link": "/pages/consultation",
-        "color_scheme": "accent-1",
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    }
   },
   "order": [
     "article-header",
-    "main-article",
-    "cta-banner"
+    "main-article"
   ]
 }
