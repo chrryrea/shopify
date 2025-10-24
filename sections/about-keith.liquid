@@ -1,0 +1,111 @@
+<section class="about-keith-section" id="about-keith">
+  <div class="container">
+    <div class="about-keith-grid">
+      <div class="keith-profile">
+        {% if section.settings.keith_image %}
+          <img src="{{ section.settings.keith_image | image_url: width: 400 }}" 
+               alt="Keith Williams" class="keith-image">
+        {% endif %}
+        <div class="keith-bio">
+          <h2>{{ section.settings.title }}</h2>
+          <div class="keith-description">
+            {{ section.settings.description }}
+          </div>
+        </div>
+      </div>
+      
+      <div class="credentials-grid">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'credential' %}
+              <div class="credential-item">
+                <i class="{{ block.settings.icon }}"></i>
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.description }}</p>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Keith Williams",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "About Keith Williams"
+    },
+    {
+      "type": "image_picker",
+      "id": "keith_image",
+      "label": "Keith's Photo"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Bio Description",
+      "default": "<p>Keith Williams is a distinguished professor at NJIT with over 40 years of experience in technology leadership. His expertise spans information systems, computer science, and practical AI implementation strategies that help businesses and individuals navigate the rapidly evolving world of artificial intelligence.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "credential",
+      "name": "Credential",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Font Awesome Icon Class",
+          "default": "fas fa-graduation-cap"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Credential Title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Credential Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Keith Williams",
+      "blocks": [
+        {
+          "type": "credential",
+          "settings": {
+            "icon": "fas fa-university",
+            "title": "NJIT Professor",
+            "description": "Information Systems & Computer Science"
+          }
+        },
+        {
+          "type": "credential",
+          "settings": {
+            "icon": "fas fa-briefcase",
+            "title": "40+ Years",
+            "description": "Technology Leadership Experience"
+          }
+        },
+        {
+          "type": "credential",
+          "settings": {
+            "icon": "fas fa-robot",
+            "title": "AI Expert",
+            "description": "Practical AI Implementation & Strategy"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

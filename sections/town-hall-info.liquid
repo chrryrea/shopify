@@ -1,0 +1,266 @@
+<section class="town-hall-section" id="town-hall">
+  <div class="container">
+    <div class="town-hall-header text-center">
+      <h2>{{ section.settings.title }}</h2>
+      <p class="town-hall-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+    
+    <div class="town-hall-grid">
+      <div class="town-hall-details">
+        <div class="detail-item">
+          <i class="fas fa-calendar-alt"></i>
+          <div>
+            <h3>When</h3>
+            <p>{{ section.settings.date_time }}</p>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h3>Where</h3>
+            <p>{{ section.settings.location }}</p>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <i class="fas fa-users"></i>
+          <div>
+            <h3>Format</h3>
+            <p>{{ section.settings.format }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="town-hall-benefits">
+        <h3>What You'll Learn</h3>
+        <ul class="benefits-list">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'benefit' %}
+                <li class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>{{ block.settings.benefit_text }}</span>
+                </li>
+            {% endcase %}
+          {% endfor %}
+        </ul>
+        
+        {% if section.settings.show_rsvp %}
+          <div class="rsvp-section">
+            <a href="{{ section.settings.rsvp_link }}" class="btn-primary">
+              {{ section.settings.rsvp_text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.town-hall-section {
+  padding: var(--spacing-xxl) 0;
+  background: var(--background);
+}
+
+.town-hall-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.town-hall-subtitle {
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-bottom: var(--spacing-xl);
+}
+
+.town-hall-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xxl);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.town-hall-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--surface);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-item i {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.detail-item h3 {
+  font-size: 1.125rem;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.detail-item p {
+  margin: 0;
+  color: var(--primary);
+  opacity: 0.9;
+}
+
+.town-hall-benefits {
+  background: var(--surface);
+  padding: var(--spacing-xl);
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.town-hall-benefits h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.benefits-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: var(--spacing-xl);
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.benefit-item i {
+  color: var(--accent);
+  font-size: 1.125rem;
+}
+
+.rsvp-section {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .town-hall-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  
+  .town-hall-header h2 {
+    font-size: 2rem;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Town Hall Information",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Monthly AI Town Hall"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Free Monthly Meetup for AI Enthusiasts"
+    },
+    {
+      "type": "text",
+      "id": "date_time",
+      "label": "Date & Time",
+      "default": "First Tuesday of each month, 6:00 PM - 8:00 PM"
+    },
+    {
+      "type": "text",
+      "id": "location",
+      "label": "Location",
+      "default": "Newark, NJ & Online (Hybrid Format)"
+    },
+    {
+      "type": "text",
+      "id": "format",
+      "label": "Format",
+      "default": "Interactive Discussion + Q&A"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rsvp",
+      "label": "Show RSVP Button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "rsvp_text",
+      "label": "RSVP Button Text",
+      "default": "RSVP for Next Event"
+    },
+    {
+      "type": "url",
+      "id": "rsvp_link",
+      "label": "RSVP Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "benefit_text",
+          "label": "Benefit Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Town Hall Information",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Practical AI applications for your business"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Latest AI trends and developments"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Networking with AI professionals"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "benefit_text": "Q&A with industry experts"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
