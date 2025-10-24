@@ -1,0 +1,204 @@
+<section class="peer-success-stories" style="background: white; padding: 5rem 2rem; color: #2d3748;">
+  <div class="page-width">
+    <div class="stories-header" style="text-align: center; margin-bottom: 4rem;">
+      <div style="color: #667eea; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; margin-bottom: 1rem;">{{ section.settings.eyebrow }}</div>
+      <h2 class="h1" style="color: #2d3748; margin-bottom: 1rem; font-size: 2.5rem;">{{ section.settings.title }}</h2>
+      <p style="font-size: 1.2rem; color: #4a5568; max-width: 700px; margin: 0 auto; line-height: 1.7;">{{ section.settings.subtitle }}</p>
+    </div>
+    
+    {% if section.settings.show_stats %}
+      <div class="success-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 5rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+        <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%); border-radius: 12px;">
+          <div style="font-size: 3rem; font-weight: 700; color: #667eea; margin-bottom: 0.5rem;">70%</div>
+          <p style="color: #4a5568; font-size: 0.95rem; margin: 0;">Complete career transition within 12 months</p>
+        </div>
+        <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%); border-radius: 12px;">
+          <div style="font-size: 3rem; font-weight: 700; color: #667eea; margin-bottom: 0.5rem;">20%+</div>
+          <p style="color: #4a5568; font-size: 0.95rem; margin: 0;">Average salary increase post-transition</p>
+        </div>
+        <div style="text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%); border-radius: 12px;">
+          <div style="font-size: 3rem; font-weight: 700; color: #667eea; margin-bottom: 0.5rem;">85%</div>
+          <p style="color: #4a5568; font-size: 0.95rem; margin: 0;">Report higher job satisfaction</p>
+        </div>
+      </div>
+    {% endif %}
+    
+    <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto;">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'testimonial' %}
+            <div class="testimonial-card" style="background: #f8f5f2; padding: 2.5rem; border-radius: 16px; border-left: 4px solid #667eea; transition: all 0.3s ease; position: relative;">
+              <div style="color: #667eea; font-size: 3rem; line-height: 1; margin-bottom: 1rem; opacity: 0.3;">"</div>
+              <blockquote style="margin: 0 0 2rem 0; color: #2d3748; line-height: 1.7; font-size: 1.05rem; font-style: italic;">
+                {{ block.settings.quote }}
+              </blockquote>
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                {% if block.settings.image %}
+                  <img src="{{ block.settings.image | image_url: width: 60 }}" alt="{{ block.settings.name }}" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 3px solid #667eea;">
+                {% else %}
+                  <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.5rem;">
+                    {{ block.settings.name | slice: 0 }}
+                  </div>
+                {% endif %}
+                <div>
+                  <div style="font-weight: 600; color: #2d3748; margin-bottom: 0.25rem;">{{ block.settings.name }}</div>
+                  <div style="color: #718096; font-size: 0.9rem;">{{ block.settings.title }}</div>
+                  {% if block.settings.result != blank %}
+                    <div style="color: #667eea; font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">{{ block.settings.result }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    
+    {% if section.settings.show_cta %}
+      <div style="text-align: center; margin-top: 4rem;">
+        <p style="color: #4a5568; font-size: 1.1rem; margin-bottom: 1.5rem;">{{ section.settings.cta_subtext }}</p>
+        <a href="{{ section.settings.cta_link }}" class="button" style="background: #667eea; color: white; padding: 1.25rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; display: inline-block; text-decoration: none; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); transition: all 0.3s ease;">
+          {{ section.settings.cta_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  
+  .button:hover {
+    background: #5568d3;
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Peer Success Stories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "REAL RESULTS FROM PROFESSIONALS LIKE YOU"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "You're Not Alone on This Journey"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Join mid-career professionals who've successfully navigated their transitions with our supportive approach"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stats",
+      "label": "Show Success Statistics",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show Call to Action",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_subtext",
+      "label": "CTA Subtext",
+      "default": "Ready to write your own success story?"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Start Your Free Assessment"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Testimonial Quote",
+          "default": "The supportive approach made all the difference. I transitioned to a role I love without the overwhelm I feared."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Person's Name",
+          "default": "Sarah M."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Person's Title/Role",
+          "default": "Marketing Manager → Product Lead"
+        },
+        {
+          "type": "text",
+          "id": "result",
+          "label": "Result/Achievement (optional)",
+          "default": "25% salary increase"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Person's Photo (optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Peer Success Stories",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "I was stuck in a role I'd outgrown but terrified of starting over. The Career Compass program helped me pivot to a leadership position that respects my need for work-life balance. No hustle culture, just practical guidance.",
+            "name": "Jennifer K.",
+            "title": "Operations Manager → Director of Customer Success",
+            "result": "30% salary increase, better work-life balance"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "After 12 years in finance, I thought I was trapped. The community support and step-by-step approach gave me confidence to transition into consulting. I'm finally doing work that aligns with my values.",
+            "name": "Michael T.",
+            "title": "Financial Analyst → Independent Consultant",
+            "result": "Built sustainable practice in 9 months"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "What I loved most was the whole-life consideration. They didn't just focus on my career—they helped me design a transition that worked for my family too. I made the move without sacrificing what matters most.",
+            "name": "Priya S.",
+            "title": "HR Manager → Learning & Development Lead",
+            "result": "Transitioned while managing family commitments"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

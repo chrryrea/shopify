@@ -1,0 +1,144 @@
+<section class="career-benefits" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 5rem 2rem; color: white;">
+  <div class="page-width">
+    <div class="benefits-header" style="text-align: center; margin-bottom: 4rem;">
+      <h2 class="h1" style="color: white; margin-bottom: 1rem; font-size: 2.5rem;">{{ section.settings.title }}</h2>
+      <p style="font-size: 1.25rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">{{ section.settings.subtitle }}</p>
+    </div>
+    
+    <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto;">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'benefit' %}
+            <div class="benefit-card" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s ease;">
+              <div class="benefit-icon" style="font-size: 3rem; margin-bottom: 1.5rem;">{{ block.settings.icon_emoji }}</div>
+              <h3 style="color: white; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">{{ block.settings.title }}</h3>
+              <p style="color: rgba(255,255,255,0.9); line-height: 1.7; font-size: 1.05rem;">{{ block.settings.description }}</p>
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    
+    {% if section.settings.show_cta %}
+      <div style="text-align: center; margin-top: 4rem;">
+        <a href="{{ section.settings.cta_link }}" class="button" style="background: white; color: #667eea; padding: 1.25rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; display: inline-block; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+          {{ section.settings.cta_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .benefit-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+  
+  .button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Career Journey Benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "What You'll Gain on Your Journey"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Navigate your mid-career transition with confidence through our nurturing, whole-life approach"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show Call to Action",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Start Your Free Assessment"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon_emoji",
+          "label": "Icon (emoji)",
+          "default": "🌱"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Benefit Title",
+          "default": "Sustainable Growth"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Develop practical skills and strategies that support long-term career growth without sacrificing work-life balance"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Career Journey Benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_emoji": "🌱",
+            "title": "Sustainable Growth Strategies",
+            "description": "Learn to advance your career without burnout, with practical tools designed for busy mid-career professionals"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_emoji": "🤝",
+            "title": "Supportive Peer Community",
+            "description": "Connect with professionals like you navigating similar transitions, providing accountability and encouragement"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_emoji": "🧭",
+            "title": "Clear Action Roadmap",
+            "description": "Step-by-step guidance that respects your unique situation, timeline, and whole-life considerations"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon_emoji": "⚖️",
+            "title": "Work-Life Integration",
+            "description": "Build a career transition plan that honors your family commitments and personal well-being"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

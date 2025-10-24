@@ -1,0 +1,117 @@
+<section class="everyday-ai-hero" style="background: linear-gradient(135deg, #f8f5f2 0%, #faf8f6 100%); padding: 6rem 2rem 5rem; min-height: 70vh; display: flex; align-items: center; position: relative; overflow: hidden;">
+  <!-- Subtle background elements -->
+  <div style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%); border-radius: 50%; filter: blur(80px);"></div>
+  <div style="position: absolute; bottom: -150px; left: -100px; width: 500px; height: 500px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%); border-radius: 50%; filter: blur(100px);"></div>
+  
+  <div class="page-width" style="position: relative; z-index: 1;">
+    <div class="hero-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <div style="display: inline-block; background: rgba(102, 126, 234, 0.1); color: #667eea; padding: 0.5rem 1.5rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem; letter-spacing: 0.5px;">
+        {{ section.settings.badge }}
+      </div>
+      
+      <h1 class="hero-title" style="color: #2d3748; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.02em;">{{ section.settings.title }}</h1>
+      
+      <p class="hero-subtitle" style="color: #667eea; font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 600; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 1px;">{{ section.settings.subtitle }}</p>
+      
+      <p class="hero-description" style="color: #4a5568; font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.7; margin-bottom: 3rem; max-width: 650px; margin-left: auto; margin-right: auto;">{{ section.settings.description }}</p>
+      
+      {% if section.settings.show_cta %}
+        <div class="hero-actions" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+          <a href="{{ section.settings.cta_link }}" style="background: #667eea; color: white; padding: 1.25rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; text-decoration: none; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); transition: all 0.3s ease; display: inline-block;">
+            {{ section.settings.cta_text }}
+          </a>
+          {% if section.settings.secondary_cta_text != blank %}
+            <a href="{{ section.settings.secondary_cta_link }}" style="background: white; color: #667eea; padding: 1.25rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; text-decoration: none; border: 2px solid #667eea; transition: all 0.3s ease; display: inline-block;">
+              {{ section.settings.secondary_cta_text }}
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+      
+      {% if section.settings.trust_line != blank %}
+        <p style="color: #718096; font-size: 0.95rem; margin-top: 2rem;">
+          <span style="color: #48bb78; font-weight: 600; margin-right: 0.5rem;">✓</span>
+          {{ section.settings.trust_line }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-actions a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Career Transition Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Text",
+      "default": "FOR MID-CAREER PROFESSIONALS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Hero Title",
+      "default": "Feeling Stuck After 10+ Years?"
+    },
+    {
+      "type": "text", 
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "You're Ready for the Next Chapter"
+    },
+    {
+      "type": "textarea",
+      "id": "description", 
+      "label": "Description",
+      "default": "Navigate your career transition with confidence through gentle guidance, practical tools, and a supportive peer community—no hustle culture required"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show Call to Action",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Primary Button Text",
+      "default": "Take Free Career Assessment"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_cta_text",
+      "label": "Secondary Button Text",
+      "default": "Explore Programs"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "trust_line",
+      "label": "Trust/Social Proof Line",
+      "default": "Join 1000+ mid-career professionals who've successfully transitioned • 60-day guarantee"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Career Transition Hero"
+    }
+  ]
+}
+{% endschema %}

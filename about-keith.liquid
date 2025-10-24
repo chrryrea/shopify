@@ -1,0 +1,117 @@
+<section class="about-keith-section" id="about-keith" style="background-color: #f8f5f2; color: #333; padding: 4rem 0;">
+  <div class="page-width">
+    <div class="about-keith-grid">
+      <div class="keith-profile">
+        {% if section.settings.keith_image %}
+          <img
+            src="{{ section.settings.keith_image | image_url: width: 400 }}"
+            alt="Keith Williams"
+            class="keith-image"
+          >
+        {% endif %}
+        <div class="keith-bio">
+          <h2 class="h1" style="color: #2d3748; margin-bottom: 1.5rem;">{{ section.settings.title }}</h2>
+          <div class="keith-description" style="color: #4a5568; line-height: 1.7; font-size: 1.1rem;">
+            {{ section.settings.description }}
+          </div>
+        </div>
+      </div>
+
+      <div class="credentials-grid">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'credential' %}
+              <div
+                class="credential-item"
+                style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease;"
+              >
+                <i class="{{ block.settings.icon }}"></i>
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.description }}</p>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Your Career Guide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Gentle Guidance for Your Career Journey"
+    },
+    {
+      "type": "image_picker",
+      "id": "keith_image",
+      "label": "Guide's Photo"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Bio Description",
+      "default": "<p>I'm here to support you in your unique career journey, offering gentle guidance and care. Unlike aggressive career coaches, I focus on nurturing transitions that respect your need for work-life balance. My approach is built on understanding your individual path and providing the support you need to grow without burning out.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "credential",
+      "name": "Credential",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Font Awesome Icon Class",
+          "default": "fas fa-hands-helping"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Credential Title"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Credential Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Your Career Guide",
+      "blocks": [
+        {
+          "type": "credential",
+          "settings": {
+            "icon": "fas fa-hands-helping",
+            "title": "Nurturing Career Guide",
+            "description": "Supporting Your Unique Journey with Care"
+          }
+        },
+        {
+          "type": "credential",
+          "settings": {
+            "icon": "fas fa-balance-scale",
+            "title": "Whole-Life Approach",
+            "description": "Balancing Career Growth with Personal Well-being"
+          }
+        },
+        {
+          "type": "credential",
+          "settings": {
+            "icon": "fas fa-users",
+            "title": "Supportive Community",
+            "description": "Join 1000+ Like-Minded Professionals"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

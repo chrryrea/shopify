@@ -1,0 +1,227 @@
+<section class="community-unity" style="background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%); padding: 5rem 2rem; color: white; position: relative; overflow: hidden;">
+  <!-- Background pattern -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 30px 30px;"></div>
+  
+  <div class="page-width" style="position: relative; z-index: 1;">
+    <div class="community-content" style="max-width: 900px; margin: 0 auto; text-align: center;">
+      <div style="display: inline-block; background: rgba(102, 126, 234, 0.2); color: #b4c6fc; padding: 0.5rem 1.5rem; border-radius: 30px; font-size: 0.9rem; font-weight: 600; margin-bottom: 2rem; letter-spacing: 0.5px;">
+        {{ section.settings.badge }}
+      </div>
+      
+      <h2 class="h1" style="color: white; margin-bottom: 1.5rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2;">{{ section.settings.title }}</h2>
+      
+      <p style="font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.7; margin-bottom: 3rem; color: rgba(255,255,255,0.9); max-width: 750px; margin-left: auto; margin-right: auto;">
+        {{ section.settings.description }}
+      </p>
+      
+      {% if section.settings.show_features %}
+        <div class="unity-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'unity_point' %}
+                <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); padding: 2rem 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease;">
+                  <div style="font-size: 2.5rem; margin-bottom: 1rem;">{{ block.settings.icon }}</div>
+                  <h3 style="color: white; font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 600;">{{ block.settings.title }}</h3>
+                  <p style="color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.6; margin: 0;">{{ block.settings.description }}</p>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      {% if section.settings.show_stats %}
+        <div class="community-stats" style="display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; margin-bottom: 3rem; padding: 2rem 0;">
+          <div style="text-align: center;">
+            <div style="font-size: 3rem; font-weight: 800; color: #667eea; margin-bottom: 0.5rem;">{{ section.settings.stat1_number }}</div>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1rem; margin: 0;">{{ section.settings.stat1_label }}</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 3rem; font-weight: 800; color: #667eea; margin-bottom: 0.5rem;">{{ section.settings.stat2_number }}</div>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1rem; margin: 0;">{{ section.settings.stat2_label }}</p>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 3rem; font-weight: 800; color: #667eea; margin-bottom: 0.5rem;">{{ section.settings.stat3_number }}</div>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1rem; margin: 0;">{{ section.settings.stat3_label }}</p>
+          </div>
+        </div>
+      {% endif %}
+      
+      {% if section.settings.show_cta %}
+        <div style="margin-top: 3rem;">
+          <a href="{{ section.settings.cta_link }}" style="background: #667eea; color: white; padding: 1.25rem 3rem; border-radius: 50px; font-weight: 600; font-size: 1.1rem; text-decoration: none; display: inline-block; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5); transition: all 0.3s ease;">
+            {{ section.settings.cta_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .unity-features > div:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-5px);
+  }
+  
+  .community-unity a:hover {
+    background: #5568d3;
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Community Unity",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Text",
+      "default": "FOR MID-CAREER PROFESSIONALS LIKE US"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "You're Not Alone in This Journey"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Join a supportive community of mid-career professionals who understand exactly what you're going through. Together, we're redefining what career transitions look like—with balance, intention, and mutual support."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_features",
+      "label": "Show Unity Features",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stats",
+      "label": "Show Community Stats",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "stat1_number",
+      "label": "Stat 1 Number",
+      "default": "1000+"
+    },
+    {
+      "type": "text",
+      "id": "stat1_label",
+      "label": "Stat 1 Label",
+      "default": "Community Members"
+    },
+    {
+      "type": "text",
+      "id": "stat2_number",
+      "label": "Stat 2 Number",
+      "default": "50K+"
+    },
+    {
+      "type": "text",
+      "id": "stat2_label",
+      "label": "Stat 2 Label",
+      "default": "LinkedIn Followers"
+    },
+    {
+      "type": "text",
+      "id": "stat3_number",
+      "label": "Stat 3 Number",
+      "default": "85%"
+    },
+    {
+      "type": "text",
+      "id": "stat3_label",
+      "label": "Stat 3 Label",
+      "default": "Higher Job Satisfaction"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show Call to Action",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Join the Community"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "unity_point",
+      "name": "Unity Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (emoji)",
+          "default": "🤝"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Shared Experience"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Connect with professionals who understand your unique challenges"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Community Unity",
+      "blocks": [
+        {
+          "type": "unity_point",
+          "settings": {
+            "icon": "🤝",
+            "title": "Peer Support Network",
+            "description": "Build meaningful connections with professionals navigating similar transitions"
+          }
+        },
+        {
+          "type": "unity_point",
+          "settings": {
+            "icon": "💬",
+            "title": "Safe Space to Share",
+            "description": "Express concerns and celebrate wins in a judgment-free community"
+          }
+        },
+        {
+          "type": "unity_point",
+          "settings": {
+            "icon": "🎯",
+            "title": "Collective Wisdom",
+            "description": "Learn from others' experiences and share your own insights"
+          }
+        },
+        {
+          "type": "unity_point",
+          "settings": {
+            "icon": "✨",
+            "title": "Accountability Partners",
+            "description": "Stay motivated with peers who keep you on track toward your goals"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,222 @@
+<section class="program-offerings" style="background: #f8f5f2; padding: 5rem 2rem; color: #2d3748;">
+  <div class="page-width">
+    <div class="offerings-header" style="text-align: center; margin-bottom: 4rem;">
+      <h2 class="h1" style="color: #2d3748; margin-bottom: 1rem; font-size: 2.5rem;">{{ section.settings.title }}</h2>
+      <p style="font-size: 1.2rem; color: #4a5568; max-width: 700px; margin: 0 auto; line-height: 1.7;">{{ section.settings.subtitle }}</p>
+    </div>
+    
+    <div class="programs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'program' %}
+            <div class="program-card" style="background: white; padding: 3rem 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s ease; border: 2px solid transparent; position: relative;">
+              {% if block.settings.is_featured %}
+                <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #667eea; color: white; padding: 0.5rem 1.5rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">MOST POPULAR</div>
+              {% endif %}
+              
+              <div class="program-badge" style="background: rgba(102, 126, 234, 0.1); color: #667eea; display: inline-block; padding: 0.5rem 1.25rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem;">{{ block.settings.badge }}</div>
+              
+              <h3 style="color: #2d3748; font-size: 1.75rem; margin-bottom: 1rem; font-weight: 700;">{{ block.settings.title }}</h3>
+              
+              <div class="program-price" style="margin-bottom: 1.5rem;">
+                {% if block.settings.price == "Free" %}
+                  <span style="font-size: 2.5rem; font-weight: 700; color: #48bb78;">FREE</span>
+                {% else %}
+                  <span style="font-size: 2.5rem; font-weight: 700; color: #2d3748;">${{ block.settings.price }}</span>
+                  {% if block.settings.price_detail != blank %}
+                    <span style="display: block; color: #718096; font-size: 0.95rem; margin-top: 0.5rem;">{{ block.settings.price_detail }}</span>
+                  {% endif %}
+                {% endif %}
+              </div>
+              
+              <p style="color: #4a5568; line-height: 1.7; margin-bottom: 2rem; min-height: 80px;">{{ block.settings.description }}</p>
+              
+              <div class="program-features" style="text-align: left; margin-bottom: 2rem;">
+                {% assign features = block.settings.features | split: '|' %}
+                {% for feature in features %}
+                  <div style="display: flex; align-items: start; margin-bottom: 1rem;">
+                    <span style="color: #48bb78; margin-right: 0.75rem; font-size: 1.25rem; flex-shrink: 0;">✓</span>
+                    <span style="color: #4a5568; line-height: 1.6;">{{ feature | strip }}</span>
+                  </div>
+                {% endfor %}
+              </div>
+              
+              {% if block.settings.cta_link != blank %}
+                <a href="{{ block.settings.cta_link }}" style="display: block; background: {% if block.settings.is_featured %}#667eea{% else %}transparent{% endif %}; color: {% if block.settings.is_featured %}white{% else %}#667eea{% endif %}; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; border: 2px solid #667eea; transition: all 0.3s ease;">
+                  {{ block.settings.cta_text }}
+                </a>
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+    
+    {% if section.settings.guarantee_text != blank %}
+      <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: rgba(102, 126, 234, 0.05); border-radius: 12px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <p style="color: #2d3748; font-size: 1.1rem; margin: 0;">
+          <strong style="color: #667eea;">💜 {{ section.settings.guarantee_text }}</strong>
+        </p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .program-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    border-color: #667eea;
+  }
+  
+  .program-card a:hover {
+    background: #667eea !important;
+    color: white !important;
+    transform: scale(1.02);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Program Offerings",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Choose Your Path Forward"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Whether you're just starting to explore or ready to commit, we have a supportive path designed for you"
+    },
+    {
+      "type": "text",
+      "id": "guarantee_text",
+      "label": "Guarantee/Trust Statement",
+      "default": "60-Day Money-Back Guarantee • Join 1000+ Mid-Career Professionals"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "program",
+      "name": "Program",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge Text",
+          "default": "FREE RESOURCE"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Program Name",
+          "default": "Career Assessment"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price (enter 'Free' or number only)",
+          "default": "Free"
+        },
+        {
+          "type": "text",
+          "id": "price_detail",
+          "label": "Price Detail (e.g., 'one-time', 'per month')",
+          "default": ""
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Short Description",
+          "default": "Discover where you are in your career journey and what's possible"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features (separate with |)",
+          "default": "15-minute self-assessment|Personalized insights report|Weekly career tips email|Access to private community"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text",
+          "default": "Get Started Free"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_featured",
+          "label": "Mark as Featured/Most Popular",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Program Offerings",
+      "blocks": [
+        {
+          "type": "program",
+          "settings": {
+            "badge": "START HERE",
+            "title": "Career Assessment",
+            "price": "Free",
+            "price_detail": "",
+            "description": "Begin your journey with clarity about where you are and where you want to go",
+            "features": "15-minute career assessment|Personalized insights report|Weekly career guidance tips|Access to our private community",
+            "cta_text": "Start Free Assessment",
+            "is_featured": false
+          }
+        },
+        {
+          "type": "program",
+          "settings": {
+            "badge": "SELF-PACED",
+            "title": "Mid-Career Pivot Playbook",
+            "price": "197",
+            "price_detail": "one-time investment",
+            "description": "Your comprehensive roadmap for navigating a successful career transition at your own pace",
+            "features": "8 core modules with video lessons|Downloadable worksheets & templates|LinkedIn optimization guide|Private Slack community access|Lifetime access & updates",
+            "cta_text": "Get the Playbook",
+            "is_featured": false
+          }
+        },
+        {
+          "type": "program",
+          "settings": {
+            "badge": "FLAGSHIP PROGRAM",
+            "title": "90-Day Career Compass",
+            "price": "497",
+            "price_detail": "payment plans available",
+            "description": "Guided group program with personalized support for your complete career transition",
+            "features": "12 weeks of live group coaching|Personal career transition plan|Peer accountability partnerships|Resume & LinkedIn optimization|Interview preparation support|6 months alumni community access",
+            "cta_text": "Join Next Cohort",
+            "is_featured": true
+          }
+        },
+        {
+          "type": "program",
+          "settings": {
+            "badge": "ONGOING SUPPORT",
+            "title": "Monthly Mastermind",
+            "price": "97",
+            "price_detail": "per month, cancel anytime",
+            "description": "Continuous peer support and accountability for professionals in transition",
+            "features": "2 live group sessions monthly|Peer support community|Guest expert sessions|Monthly action planning|Career resource library",
+            "cta_text": "Join the Community",
+            "is_featured": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
