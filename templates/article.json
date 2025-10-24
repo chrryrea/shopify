@@ -50,25 +50,6 @@
         },
         "content": {
           "type": "content"
-        },
-        "author_bio": {
-          "type": "author_bio",
-          "settings": {
-            "show_author_image": true,
-            "show_author_name": true,
-            "show_author_bio": true
-          }
-        },
-        "related_posts": {
-          "type": "related_posts",
-          "settings": {
-            "heading": "Continue Reading",
-            "post_limit": 3,
-            "show_image": true,
-            "show_date": true,
-            "show_author": false,
-            "show_excerpt": true
-          }
         }
       },
       "block_order": [
@@ -77,9 +58,7 @@
         "title",
         "tags",
         "share",
-        "content",
-        "author_bio",
-        "related_posts"
+        "content"
       ],
       "settings": {
         "padding_top": 24,

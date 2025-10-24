@@ -189,7 +189,6 @@
   "order": [
     "hero",
     "features",
-    "testimonials",
     "faq"
   ]
 }
