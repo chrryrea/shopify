@@ -1,107 +1,314 @@
 {
   "sections": {
-    "everyday-ai-hero": {
+    "career-hero": {
       "type": "everyday-ai-hero",
       "settings": {
-        "title": "Everyday AI",
-        "subtitle": "WITH KEITH WILLIAMS", 
-        "description": "Free Monthly Town Hall • Newark, NJ & Online",
+        "badge": "FOR MID-CAREER PROFESSIONALS",
+        "title": "Feeling Stuck After 10+ Years?",
+        "subtitle": "You're Ready for the Next Chapter",
+        "description": "Navigate your career transition with confidence through gentle guidance, practical tools, and a supportive peer community—no hustle culture required",
         "show_cta": true,
-        "cta_text": "Join Our Community",
-        "cta_link": "#newsletter-signup",
-        "secondary_cta_text": "Learn More",
-        "secondary_cta_link": "#about-keith"
+        "cta_text": "Take Free Career Assessment",
+        "cta_link": "/pages/assessment",
+        "secondary_cta_text": "Explore Programs",
+        "secondary_cta_link": "#programs",
+        "trust_line": "Join 1000+ mid-career professionals who've successfully transitioned • 60-day guarantee"
       }
     },
-    "about-keith": {
-      "type": "about-keith",
-      "blocks": {
-        "credential_1": {
-          "type": "credential",
-          "settings": {
-            "icon": "fas fa-university",
-            "title": "NJIT Professor",
-            "description": "Information Systems & Computer Science"
-          }
-        },
-        "credential_2": {
-          "type": "credential", 
-          "settings": {
-            "icon": "fas fa-briefcase",
-            "title": "40+ Years",
-            "description": "Technology Leadership Experience"
-          }
-        },
-        "credential_3": {
-          "type": "credential",
-          "settings": {
-            "icon": "fas fa-robot",
-            "title": "AI Expert",
-            "description": "Practical AI Implementation & Strategy"
-          }
-        }
+    "career-benefits": {
+      "type": "career-benefits",
+      "settings": {
+        "title": "What You'll Gain on Your Journey",
+        "subtitle": "Navigate your mid-career transition with confidence through our nurturing, whole-life approach",
+        "show_cta": true,
+        "cta_text": "Start Your Free Assessment",
+        "cta_link": "/pages/assessment"
       },
-      "block_order": ["credential_1", "credential_2", "credential_3"]
-    },
-    "town-hall-info": {
-      "type": "town-hall-info",
       "blocks": {
         "benefit_1": {
           "type": "benefit",
           "settings": {
-            "benefit_text": "Practical AI applications for your business"
+            "icon_emoji": "🌱",
+            "title": "Sustainable Growth Strategies",
+            "description": "Learn to advance your career without burnout, with practical tools designed for busy mid-career professionals"
           }
         },
         "benefit_2": {
           "type": "benefit",
           "settings": {
-            "benefit_text": "Latest AI trends and developments"
+            "icon_emoji": "🤝",
+            "title": "Supportive Peer Community",
+            "description": "Connect with professionals like you navigating similar transitions, providing accountability and encouragement"
           }
         },
         "benefit_3": {
           "type": "benefit",
           "settings": {
-            "benefit_text": "Networking with AI professionals"
+            "icon_emoji": "🧭",
+            "title": "Clear Action Roadmap",
+            "description": "Step-by-step guidance that respects your unique situation, timeline, and whole-life considerations"
           }
         },
         "benefit_4": {
           "type": "benefit",
           "settings": {
-            "benefit_text": "Q&A with industry experts"
+            "icon_emoji": "⚖️",
+            "title": "Work-Life Integration",
+            "description": "Build a career transition plan that honors your family commitments and personal well-being"
           }
         }
       },
       "block_order": ["benefit_1", "benefit_2", "benefit_3", "benefit_4"]
     },
-    "newsletter-signup": {
-      "type": "newsletter-signup",
+    "community-unity": {
+      "type": "community-unity",
+      "settings": {
+        "badge": "FOR MID-CAREER PROFESSIONALS LIKE US",
+        "title": "You're Not Alone in This Journey",
+        "description": "Join a supportive community of mid-career professionals who understand exactly what you're going through. Together, we're redefining what career transitions look like—with balance, intention, and mutual support.",
+        "show_features": true,
+        "show_stats": true,
+        "stat1_number": "1000+",
+        "stat1_label": "Community Members",
+        "stat2_number": "50K+",
+        "stat2_label": "LinkedIn Followers",
+        "stat3_number": "85%",
+        "stat3_label": "Higher Job Satisfaction",
+        "show_cta": true,
+        "cta_text": "Join the Community",
+        "cta_link": "/pages/community"
+      },
       "blocks": {
-        "benefit_1": {
-          "type": "benefit",
+        "unity_1": {
+          "type": "unity_point",
           "settings": {
-            "benefit_text": "Monthly AI insights and trends"
+            "icon": "🤝",
+            "title": "Peer Support Network",
+            "description": "Build meaningful connections with professionals navigating similar transitions"
           }
         },
-        "benefit_2": {
-          "type": "benefit",
+        "unity_2": {
+          "type": "unity_point",
           "settings": {
-            "benefit_text": "Exclusive event invitations"
+            "icon": "💬",
+            "title": "Safe Space to Share",
+            "description": "Express concerns and celebrate wins in a judgment-free community"
           }
         },
-        "benefit_3": {
-          "type": "benefit",
+        "unity_3": {
+          "type": "unity_point",
           "settings": {
-            "benefit_text": "Practical AI implementation tips"
+            "icon": "🎯",
+            "title": "Collective Wisdom",
+            "description": "Learn from others' experiences and share your own insights"
+          }
+        },
+        "unity_4": {
+          "type": "unity_point",
+          "settings": {
+            "icon": "✨",
+            "title": "Accountability Partners",
+            "description": "Stay motivated with peers who keep you on track toward your goals"
           }
         }
       },
-      "block_order": ["benefit_1", "benefit_2", "benefit_3"]
+      "block_order": ["unity_1", "unity_2", "unity_3", "unity_4"]
+    },
+    "success-stories": {
+      "type": "peer-success-stories",
+      "settings": {
+        "eyebrow": "REAL RESULTS FROM PROFESSIONALS LIKE YOU",
+        "title": "You're Not Alone on This Journey",
+        "subtitle": "Join mid-career professionals who've successfully navigated their transitions with our supportive approach",
+        "show_stats": true,
+        "show_cta": true,
+        "cta_subtext": "Ready to write your own success story?",
+        "cta_text": "Start Your Free Assessment",
+        "cta_link": "/pages/assessment"
+      },
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "I was stuck in a role I'd outgrown but terrified of starting over. The Career Compass program helped me pivot to a leadership position that respects my need for work-life balance. No hustle culture, just practical guidance.",
+            "name": "Jennifer K.",
+            "title": "Operations Manager → Director of Customer Success",
+            "result": "30% salary increase, better work-life balance"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "After 12 years in finance, I thought I was trapped. The community support and step-by-step approach gave me confidence to transition into consulting. I'm finally doing work that aligns with my values.",
+            "name": "Michael T.",
+            "title": "Financial Analyst → Independent Consultant",
+            "result": "Built sustainable practice in 9 months"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "What I loved most was the whole-life consideration. They didn't just focus on my career—they helped me design a transition that worked for my family too. I made the move without sacrificing what matters most.",
+            "name": "Priya S.",
+            "title": "HR Manager → Learning & Development Lead",
+            "result": "Transitioned while managing family commitments"
+          }
+        }
+      },
+      "block_order": ["testimonial_1", "testimonial_2", "testimonial_3"]
+    },
+    "about-guide": {
+      "type": "about-keith",
+      "settings": {
+        "title": "Gentle Guidance for Your Career Journey",
+        "description": "<p>I'm here to support you in your unique career journey, offering gentle guidance and care. Unlike aggressive career coaches, I focus on nurturing transitions that respect your need for work-life balance. My approach is built on understanding your individual path and providing the support you need to grow without burning out.</p>"
+      },
+      "blocks": {
+        "credential_1": {
+          "type": "credential",
+          "settings": {
+            "icon": "fas fa-hands-helping",
+            "title": "Nurturing Career Guide",
+            "description": "Supporting Your Unique Journey with Care"
+          }
+        },
+        "credential_2": {
+          "type": "credential",
+          "settings": {
+            "icon": "fas fa-balance-scale",
+            "title": "Whole-Life Approach",
+            "description": "Balancing Career Growth with Personal Well-being"
+          }
+        },
+        "credential_3": {
+          "type": "credential",
+          "settings": {
+            "icon": "fas fa-users",
+            "title": "Supportive Community",
+            "description": "Join 1000+ Like-Minded Professionals"
+          }
+        }
+      },
+      "block_order": ["credential_1", "credential_2", "credential_3"]
+    },
+    "programs": {
+      "type": "program-offerings",
+      "settings": {
+        "title": "Choose Your Path Forward",
+        "subtitle": "Whether you're just starting to explore or ready to commit, we have a supportive path designed for you",
+        "guarantee_text": "60-Day Money-Back Guarantee • Join 1000+ Mid-Career Professionals"
+      },
+      "blocks": {
+        "program_1": {
+          "type": "program",
+          "settings": {
+            "badge": "START HERE",
+            "title": "Career Assessment",
+            "price": "Free",
+            "price_detail": "one-time",
+            "description": "Begin your journey with clarity about where you are and where you want to go",
+            "features": "15-minute career assessment|Personalized insights report|Weekly career guidance tips|Access to our private community",
+            "cta_text": "Start Free Assessment",
+            "cta_link": "/pages/assessment",
+            "is_featured": false
+          }
+        },
+        "program_2": {
+          "type": "program",
+          "settings": {
+            "badge": "SELF-PACED",
+            "title": "Mid-Career Pivot Playbook",
+            "price": "197",
+            "price_detail": "one-time investment",
+            "description": "Your comprehensive roadmap for navigating a successful career transition at your own pace",
+            "features": "8 core modules with video lessons|Downloadable worksheets & templates|LinkedIn optimization guide|Private Slack community access|Lifetime access & updates",
+            "cta_text": "Get the Playbook",
+            "cta_link": "/products/pivot-playbook",
+            "is_featured": false
+          }
+        },
+        "program_3": {
+          "type": "program",
+          "settings": {
+            "badge": "FLAGSHIP PROGRAM",
+            "title": "90-Day Career Compass",
+            "price": "497",
+            "price_detail": "payment plans available",
+            "description": "Guided group program with personalized support for your complete career transition",
+            "features": "12 weeks of live group coaching|Personal career transition plan|Peer accountability partnerships|Resume & LinkedIn optimization|Interview preparation support|6 months alumni community access",
+            "cta_text": "Join Next Cohort",
+            "cta_link": "/products/career-compass",
+            "is_featured": true
+          }
+        },
+        "program_4": {
+          "type": "program",
+          "settings": {
+            "badge": "ONGOING SUPPORT",
+            "title": "Monthly Mastermind",
+            "price": "97",
+            "price_detail": "per month, cancel anytime",
+            "description": "Continuous peer support and accountability for professionals in transition",
+            "features": "2 live group sessions monthly|Peer support community|Guest expert sessions|Monthly action planning|Career resource library",
+            "cta_text": "Join the Community",
+            "cta_link": "/products/mastermind",
+            "is_featured": false
+          }
+        }
+      },
+      "block_order": ["program_1", "program_2", "program_3", "program_4"]
+    },
+    "faq": {
+      "type": "career-faq",
+      "settings": {
+        "title": "Questions You Might Have",
+        "subtitle": "We understand the concerns and uncertainties that come with career transitions. Here are answers to common questions.",
+        "show_contact_cta": true,
+        "contact_title": "Still Have Questions?",
+        "contact_text": "We're here to support you. Schedule a free 15-minute consultation to discuss your unique situation.",
+        "contact_button": "Book Free Consultation",
+        "contact_link": "/pages/consultation"
+      },
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "I'm worried about starting over. Will I have to take a pay cut?",
+            "answer": "<p>We focus on lateral or upward moves that leverage your experience. While some transitions involve short-term adjustments, our average member sees a 20%+ salary increase post-transition. We'll help you identify roles where your skills are valued and compensated appropriately.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How is this different from other career coaching programs?",
+            "answer": "<p>Unlike programs that push aggressive advancement or entrepreneurship, we focus on sustainable transitions with work-life integration. Our approach is nurturing, not hustle-focused. We provide peer community support, step-by-step guidance, and consider your whole life—not just your career goals.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "I have family responsibilities. Can I really make this work?",
+            "answer": "<p>Absolutely. Our whole-life approach is designed for professionals balancing multiple commitments. We help you create a transition timeline that respects your family needs. Many of our members successfully pivoted while managing parenting, caregiving, and other responsibilities.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What if I don't know what I want to do next?",
+            "answer": "<p>That's exactly where our free Career Assessment comes in. We'll help you gain clarity on your strengths, values, and options. The assessment process itself often reveals possibilities you hadn't considered. You don't need all the answers to get started.</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"]
     }
   },
   "order": [
-    "everyday-ai-hero",
-    "about-keith", 
-    "town-hall-info",
-    "newsletter-signup"
+    "career-hero",
+    "career-benefits",
+    "community-unity",
+    "success-stories",
+    "about-guide",
+    "programs",
+    "faq"
   ]
 }
