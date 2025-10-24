@@ -40,7 +40,7 @@
           }
         },
         "tags": {
-          "type": "tags"
+          "type": "article-tags"
         },
         "share": {
           "type": "share",
