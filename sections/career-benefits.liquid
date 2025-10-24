@@ -1,3 +1,18 @@
+{% comment %}
+  Career Benefits Section
+  
+  Displays a grid of key benefits with emoji icons, designed to highlight the value
+  proposition for mid-career professionals. Features a gradient background and
+  glass-morphism style cards for a modern look.
+  
+  Key Features:
+  - Responsive grid layout
+  - Animated hover effects
+  - Emoji-based icons
+  - Gradient background
+  - Optional CTA button
+{% endcomment %}
+
 <section class="career-benefits" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 5rem 2rem; color: white;">
   <div class="page-width">
     <div class="benefits-header" style="text-align: center; margin-bottom: 4rem;">
@@ -5,7 +20,14 @@
       <p style="font-size: 1.25rem; color: rgba(255,255,255,0.95); max-width: 700px; margin: 0 auto;">{{ section.settings.subtitle }}</p>
     </div>
     
-    <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto;">
+      {% comment %}
+    Benefits Grid Layout
+    - Uses CSS Grid with auto-fit for responsive columns
+    - Minimum column width: 280px
+    - Maximum container width: 1200px
+    - 2.5rem gap between items
+  {% endcomment %}
+  <div class="benefits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto;">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'benefit' %}
@@ -29,17 +51,89 @@
 </section>
 
 <style>
+  /* =====================
+     Benefits Section Styling
+     ===================== */
+  
+  /* Card Hover Effect */
+  .benefit-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
   .benefit-card:hover {
+    /* Elevate card on hover */
     transform: translateY(-8px);
-    background: rgba(255,255,255,0.2);
+    /* Lighten background on hover */
+    background: rgba(255,255,255,0.2) !important;
+    /* Add depth with shadow */
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+  
+  /* Button Styling */
+  .button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
   
   .button:hover {
     transform: scale(1.05);
     box-shadow: 0 15px 40px rgba(0,0,0,0.3);
   }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 749px) {
+    .benefits-grid {
+      /* Single column on mobile */
+      grid-template-columns: 1fr;
+      padding: 0 1.5rem;
+    }
+    
+    .benefit-card {
+      /* Add some breathing room between cards */
+      margin-bottom: 1.5rem;
+    }
+    
+    .benefits-header h2 {
+      font-size: 2rem !important;
+    }
+    
+    .benefits-header p {
+      font-size: 1.1rem !important;
+      padding: 0 1rem;
+    }
+  }
+  
+  /* Accessibility Improvements */
+  .benefit-card:focus-within {
+    outline: 3px solid rgba(255,255,255,0.5);
+    outline-offset: 2px;
+  }
+  
+  /* Print Styles */
+  @media print {
+    .career-benefits {
+      background: #f5f5f5 !important;
+      color: #000 !important;
+      -webkit-print-color-adjust: exact;
+    }
+    
+    .benefit-card {
+      background: #fff !important;
+      border: 1px solid #ddd !important;
+      color: #000 !important;
+    }
+  }
 </style>
+
+{% comment %}
+  ====================================
+  Section Schema
+  
+  Defines the structure and settings for the Career Benefits section.
+  Includes both section-level settings and block definitions for benefit items.
+  ====================================
+{% endcomment %}
 
 {% schema %}
 {

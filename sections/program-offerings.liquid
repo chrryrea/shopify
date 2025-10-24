@@ -1,3 +1,17 @@
+{% comment %}
+  Program Offerings Section
+  
+  This section displays a grid of program/service cards with pricing, features, and call-to-action buttons.
+  Each program can be marked as featured and includes customizable content.
+  
+  Key Features:
+  - Responsive grid layout
+  - Featured program highlighting
+  - Dynamic feature lists
+  - Hover effects and transitions
+  - Mobile-optimized design
+{% endcomment %}
+
 <section class="program-offerings" style="background: #f8f5f2; padding: 5rem 2rem; color: #2d3748;">
   <div class="page-width">
     <div class="offerings-header" style="text-align: center; margin-bottom: 4rem;">
@@ -5,7 +19,14 @@
       <p style="font-size: 1.2rem; color: #4a5568; max-width: 700px; margin: 0 auto; line-height: 1.7;">{{ section.settings.subtitle }}</p>
     </div>
     
-    <div class="programs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
+      {% comment %}
+    Programs Grid
+    - Uses CSS Grid for responsive layout
+    - Automatically adjusts number of columns based on viewport
+    - Minimum card width: 300px
+    - Maximum container width: 1200px
+  {% endcomment %}
+  <div class="programs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'program' %}
@@ -62,18 +83,55 @@
 </section>
 
 <style>
+  /* =====================
+     Program Card Animations
+     ===================== */
   .program-card:hover {
+    /* Elevate card on hover */
     transform: translateY(-8px);
+    /* Add depth with shadow */
     box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    /* Highlight border */
     border-color: #667eea;
+    /* Smooth transition */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
+  /* Button hover effects */
   .program-card a:hover {
+    /* Primary color background on hover */
     background: #667eea !important;
+    /* Ensure text is visible */
     color: white !important;
+    /* Subtle scale effect */
     transform: scale(1.02);
+    /* Smooth transition */
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 749px) {
+    .programs-grid {
+      /* Single column on mobile */
+      grid-template-columns: 1fr;
+      padding: 0 1.5rem;
+    }
+    
+    .program-card {
+      /* Add some breathing room between cards */
+      margin-bottom: 2rem;
+    }
   }
 </style>
+
+{% comment %}
+  ====================================
+  Section Schema
+  
+  This schema defines the structure and settings for the Program Offerings section.
+  It includes both section-level settings and block definitions for individual programs.
+  ====================================
+{% endcomment %}
 
 {% schema %}
 {
