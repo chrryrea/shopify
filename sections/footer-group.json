@@ -12,18 +12,11 @@
             "menu": "footer"
           }
         },
-        "footer-1": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Info",
-            "menu": "footer"
-          }
-        },
         "footer-2": {
           "type": "text",
           "settings": {
             "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "subtext": "<p>For mid-career professionals feeling stuck in their current roles, we will provide nurturing guidance and peer support for sustainable career transitions, unlike existing career influencers who focus on aggressive advancement or entrepreneurship without considering work-life balance and gradual change.<\/p>"
           }
         }
       },
@@ -35,7 +28,7 @@
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_heading": "Subscribe to our Mailing List",
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
